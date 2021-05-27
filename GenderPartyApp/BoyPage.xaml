@@ -1,0 +1,55 @@
+﻿<Page x:Class="GenderPartyApp.BoyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GenderPartyApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BoyPage">
+    <Grid Opacity="1">
+            <Grid.Background>
+            <VisualBrush>
+                <VisualBrush.Visual>
+                    <MediaElement Source="src/boy.mp4"></MediaElement>
+                </VisualBrush.Visual>
+            </VisualBrush>
+                
+            </Grid.Background>
+
+            <Grid>
+            <Viewbox>
+                <TextBlock
+                Margin="20"
+                TextWrapping="Wrap"
+                Foreground="White"
+                Name="resp"               
+                FontStyle="Italic"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                TextAlignment="Center"
+                />
+            </Viewbox>
+                
+            </Grid>
+
+    </Grid>
+    
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard TargetProperty="FontSize" TargetName="resp">
+                        <DoubleAnimation From="20" To="150"
+                                         AutoReverse="True"
+                                         RepeatBehavior="0:0:30"
+                                         Duration="0:0:5"
+                                          />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Page.Triggers>
+
+</Page>
