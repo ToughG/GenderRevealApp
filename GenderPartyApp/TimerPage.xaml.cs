@@ -36,7 +36,7 @@ namespace GenderPartyApp
                 if (_time == TimeSpan.Zero) {
                     _timer.Stop();
                     player.Stop();
-                    if (response_string == "МАЛЬЧИК" || response_string == "BOY") NavigationService.Navigate(new BoyPage());
+                    if (response_string.Contains("МАЛЬЧИК") || response_string.Contains("BOY")) NavigationService.Navigate(new BoyPage());
                     else
                         NavigationService.Navigate(new GirlPage());
                 } 
